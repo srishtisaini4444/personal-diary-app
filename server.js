@@ -7,6 +7,7 @@ const DB_PATH = path.join(__dirname, "data", "database.json");
 
 const app = express();
 const PORT = 3000;
+let currentUserId = null;
 
 function readDatabase() {
     const data = fs.readFileSync(DB_PATH, "utf8");
@@ -72,6 +73,8 @@ app.post("/login", (req, res) => {
             user.password === password
     );
 
+    currentUserId = user.id;
+
     if (!user) {
         return res.send("Invalid Username or Password");
     }
@@ -90,8 +93,14 @@ app.post("/add-entry", (req, res) => {
         return res.send("No user found.");
     }
 
-    // ------->>>>Temporary: use the last registered user mehuu meow
-    const currentUser = db.users[db.users.length - 1];
+    // ------->>>>Temporary: use the last registered user mehuu meow🥺
+     const currentUser = db.users.find(
+    user => user.id === currentUserId
+    );
+
+    if (!currentUser) {
+    return res.send("Please login first.");
+}
 
     const newEntry = {
         id: db.entries.length + 1,
@@ -139,9 +148,17 @@ app.get("/entries", (req, res) => {
 
     const db = readDatabase();
 
+    if (currentUserId === null) {
+    return res.redirect("/");
+    }
+
+    const userEntries = db.entries.filter(
+    entry => entry.userId === currentUserId
+    );
+
     let html = "<h1>My Diary Entries</h1>";
 
-    db.entries.forEach(entry => {
+    userEntries.forEach(entry => {
 
         html += `
         <div style="border:1px solid black;padding:10px;margin:10px;">
@@ -177,7 +194,17 @@ app.post("/delete-entry/:id", (req, res) => {
 
     const db = readDatabase();
 
-    db.entries = db.entries.filter(entry => entry.id !== id);
+    const entry = db.entries.find(e => e.id === id);
+
+    if (!entry) {
+        return res.send("Entry not found.");
+    }
+
+    if (entry.userId !== currentUserId) {
+        return res.send("Unauthorized!");
+    }
+
+    db.entries = db.entries.filter(e => e.id !== id);
 
     writeDatabase(db);
 
@@ -192,6 +219,14 @@ app.get("/edit-entry/:id", (req, res) => {
     const db = readDatabase();
 
     const entry = db.entries.find(e => e.id === id);
+
+    if (!entry) {
+    return res.send("Entry not found.");
+}
+
+if (entry.userId !== currentUserId) {
+    return res.send("Unauthorized!");
+}
 
     res.send(`
         <h1>Edit Entry</h1>
@@ -216,6 +251,14 @@ app.post("/update-entry/:id", (req, res) => {
     const db = readDatabase();
 
     const entry = db.entries.find(e => e.id === id);
+
+    if (!entry) {
+    return res.send("Entry not found.");
+}
+
+if (entry.userId !== currentUserId) {
+    return res.send("Unauthorized!");
+}
 
     entry.content = req.body.entry;
 
