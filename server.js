@@ -184,7 +184,7 @@ app.get("/entries", (req, res) => {
 <a href="/">Logout</a>
 `;
 
-res.send(html);
+res.sendFile(path.join(__dirname,"public","entries.html"));
 
 });
 
