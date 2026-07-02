@@ -202,18 +202,52 @@ if (entry.userId !== currentUserId) {
 }
 
     res.send(`
-        <h1>Edit Entry</h1>
+<!DOCTYPE html>
+<html>
+<head>
 
-        <form action="/update-entry/${id}" method="POST">
+<title>Edit Entry</title>
 
-            <textarea name="entry" rows="10" cols="50">${entry.content}</textarea>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-            <br><br>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-            <button type="submit">Update</button>
+<link rel="stylesheet" href="/css/style.css">
 
-        </form>
-    `);
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>✏ Edit Memory</h1>
+
+<p class="subtitle">
+Update your thoughts.
+</p>
+
+<form action="/update-entry/${id}" method="POST">
+
+<textarea
+name="entry"
+required>${entry.content}</textarea>
+
+<button class="login-btn">
+💾 Update Memory
+</button>
+
+</form>
+
+<p class="bottom-text">
+<a href="/entries">← Back to Memories</a>
+</p>
+
+</div>
+
+</body>
+</html>
+`);
 
 });
 
