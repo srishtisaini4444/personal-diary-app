@@ -172,36 +172,26 @@ color:#999;
 
 .entry-card{
 
-background:#ffffff;
-
-padding:22px;
-
-margin-top:20px;
-
+background:white;
 border-radius:18px;
-
+padding:22px;
+margin:20px 0;
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+transition:.3s;
 border-left:6px solid #6C63FF;
-
-box-shadow:0 15px 35px rgba(0,0,0,.12);
-
-animation:fade .4s ease;
-
-transition:all .3s ease;
 
 }
 
 .entry-card:hover{
 
-transform:translateY(-6px);
-
+transform:translateY(-5px);
 box-shadow:0 20px 40px rgba(0,0,0,.18);
 
 }
 
 .entry-card h3{
 
-color:#4834D4;
-
+color:#6C63FF;
 margin-bottom:8px;
 
 }
@@ -209,12 +199,22 @@ margin-bottom:8px;
 .entry-card small{
 
 display:block;
-
-margin-bottom:18px;
-
+margin-bottom:15px;
 color:#777;
 
 }
+
+.entry-card p{
+
+font-size:16px;
+line-height:1.8;
+margin-bottom:20px;
+white-space:pre-wrap;
+
+}
+
+
+
 
 .bottom-text{
 
@@ -253,7 +253,7 @@ font-size:16px;
 
 .edit-btn{
 
-background:#3B82F6;
+background:#4F46E5;
 
 margin-bottom:10px;
 
@@ -261,7 +261,7 @@ margin-bottom:10px;
 
 .delete-btn{
 
-background:#EF4444;
+background:#FF5E7D;
 
 }
 
@@ -458,5 +458,25 @@ transform:translateY(-3px);
 
 background:#DC2626;
 transform:translateY(-3px);
+
+}
+
+.entry-actions{
+
+display:flex;
+gap:10px;
+margin-top:15px;
+
+}
+
+.entry-actions form{
+
+flex:1;
+
+}
+
+.entry-actions button{
+
+width:100%;
 
 }

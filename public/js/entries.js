@@ -35,28 +35,20 @@ fetch("/api/entries")
 
             <p>${entry.content}</p>
 
-            <form action="/edit-entry/${entry.id}" method="GET">
+            <div class="entry-actions">
 
-                <button class="edit-btn">
+<form action="/edit-entry/${entry.id}" method="GET">
+<button class="edit-btn">✏ Edit</button>
+</form>
 
-                    ✏ Edit
+<form
+action="/delete-entry/${entry.id}"
+method="POST"
+onsubmit="return confirm('Delete this diary entry?')">
+<button class="delete-btn">🗑 Delete</button>
+</form>
 
-                </button>
-
-            </form>
-
-            <form
-            action="/delete-entry/${entry.id}"
-            method= "POST"
-            onsubmit="return confirm('Delete this diary entry?')">
-
-                <button class="delete-btn">
-
-                    🗑 Delete
-
-                </button>
-
-            </form>
+</div>
 
         </div>
 
