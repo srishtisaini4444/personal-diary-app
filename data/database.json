@@ -1,6 +1,6 @@
 {
   "nextUserId": 3,
-  "nextEntryId": 7,
+  "nextEntryId": 8,
   "users": [
     {
       "id": 1,
@@ -48,6 +48,13 @@
       "content": "tomato",
       "date": "2/7/2026",
       "time": "11:45:10 pm"
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "content": "tadaa",
+      "date": "2/7/2026",
+      "time": "11:57:04 pm"
     }
   ]
 }
