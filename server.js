@@ -162,11 +162,12 @@ app.get("/entries", (req, res) => {
     });
 
     html += `
-    <br>
-    <a href="/diary.html">Back</a>
-    `;
+<br><br>
 
-    res.send(html);
+<a href="/">Logout</a>
+`;
+
+res.send(html);
 
 });
 
