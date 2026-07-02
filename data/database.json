@@ -1,6 +1,6 @@
 {
   "nextUserId": 3,
-  "nextEntryId" :9,
+  "nextEntryId": 7,
   "users": [
     {
       "id": 1,
@@ -15,27 +15,39 @@
   ],
   "entries": [
     {
-      "nextUserId": 3,
-      "users": [
-        {
-          "id": 1,
-          "username": "siri",
-          "password": "1234"
-        },
-        {
-          "id": 2,
-          "username": "mhu",
-          "password": "12345"
-        }
-      ],
-      "entries": []
-    },
-    {
       "id": 2,
       "userId": 1,
       "content": "tralala",
       "date": "2/7/2026",
       "time": "11:06:02 pm"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "content": "yo!\r\n",
+      "date": "2/7/2026",
+      "time": "11:17:38 pm"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "content": "mhu\r\n",
+      "date": "2/7/2026",
+      "time": "11:18:20 pm"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "content": "kyu",
+      "date": "2/7/2026",
+      "time": "11:22:41 pm"
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "content": "tomato",
+      "date": "2/7/2026",
+      "time": "11:45:10 pm"
     }
   ]
 }

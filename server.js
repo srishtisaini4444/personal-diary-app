@@ -28,6 +28,10 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "login.html"));
 });
 
+app.get("/register", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "register.html"));
+});
+
 app.get("/diary", (req, res) => {
 
     if (currentUserId === null) {
@@ -125,34 +129,6 @@ const newEntry = {
     db.nextEntryId++;
 
     writeDatabase(db);
-
-    let html = `
-<h1>My Diary Entries</h1>
-`;
-
-db.entries.forEach(entry => {
-    html += `
-        <div style="border:1px solid black; padding:10px; margin:10px;">
-            <p>${entry.content}</p>
-
-            <form action="/delete-entry/${entry.id}" method="POST">
-                <button>Delete</button>
-            </form>
-
-            <br>
-
-            <form action="/edit-entry/${entry.id}" method="GET">
-                <button>Edit</button>
-            </form>
-
-        </div>
-    `;
-});
-
-html += `
-<br>
-<a href="/">Logout</a>
-`;
 
 res.redirect("/entries");
 
