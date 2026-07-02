@@ -6,7 +6,18 @@ fetch("/api/entries")
 
     if(entries.length === 0){
 
-        container.innerHTML = "<h3>No diary entries yet.</h3>";
+        container.innerHTML = `
+        <div class="entry-card">
+
+        <h2>📖</h2>
+
+        <p>No diary entries yet.</p>
+
+        <p>Write your first memory today!</p>
+
+        </div>
+
+        `;
 
         return;
 
