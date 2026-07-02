@@ -45,7 +45,10 @@ fetch("/api/entries")
 
             </form>
 
-            <form action="/delete-entry/${entry.id}" method="POST">
+            <form
+            action="/delete-entry/${entry.id}"
+            method= "POST"
+            onsubmit="return confirm('Delete this diary entry?')">
 
                 <button class="delete-btn">
 
