@@ -53,7 +53,12 @@ app.post("/register", (req, res) => {
     );
 
     if (existingUser) {
-        return res.send("Username already exists!");
+        return res.send(`
+<script>
+alert("⚠ Username already exists!");
+window.location.href="/register";
+</script>
+`);
     }
 
     const newUser = {
@@ -68,7 +73,7 @@ app.post("/register", (req, res) => {
 
     writeDatabase(db);
 
-    res.send("Registration Successful!");
+    res.redirect("/");
 });
 
 app.post("/login", (req, res) => {
@@ -84,7 +89,12 @@ app.post("/login", (req, res) => {
     );
 
     if (!user) {
-    return res.send("Invalid Username or Password");
+    return res.send(`
+<script>
+alert("❌ Invalid Username or Password");
+window.location.href="/";
+</script>
+`);
 }
 
 currentUserId = user.id;
@@ -105,7 +115,7 @@ app.post("/add-entry", (req, res) => {
     );
 
     if (!currentUser) {
-    return res.send("Please login first.");
+    return res.redirect("/");
 }
 
     const now = new Date();
