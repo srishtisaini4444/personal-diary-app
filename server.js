@@ -28,8 +28,14 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "login.html"));
 });
 
-app.get("/register", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "register.html"));
+app.get("/diary", (req, res) => {
+
+    if (currentUserId === null) {
+        return res.redirect("/");
+    }
+
+    res.sendFile(path.join(__dirname, "public", "diary.html"));
+
 });
 
 app.post("/register", (req, res) => {
