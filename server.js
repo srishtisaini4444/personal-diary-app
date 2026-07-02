@@ -144,6 +144,22 @@ res.redirect("/entries");
 
 });
 
+app.get("/api/entries", (req, res) => {
+
+    const db = readDatabase();
+
+    if (currentUserId === null) {
+        return res.json([]);
+    }
+
+    const userEntries = db.entries.filter(
+        entry => entry.userId === currentUserId
+    );
+
+    res.json(userEntries);
+
+});
+
 app.get("/entries", (req, res) => {
 
     const db = readDatabase();
