@@ -18,6 +18,10 @@ fetch("/api/entries")
         
         <div class="entry-card">
 
+            <h3>📅 ${entry.date}</h3>
+
+            <small>🕒 ${entry.time}</small>
+
             <p>${entry.content}</p>
 
             <form action="/edit-entry/${entry.id}" method="GET">
