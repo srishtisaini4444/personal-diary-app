@@ -73,11 +73,11 @@ app.post("/login", (req, res) => {
             user.password === password
     );
 
-    currentUserId = user.id;
-
     if (!user) {
-        return res.send("Invalid Username or Password");
-    }
+    return res.send("Invalid Username or Password");
+}
+
+currentUserId = user.id;
 
     res.sendFile(path.join(__dirname, "public", "diary.html"));
 
