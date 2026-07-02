@@ -103,6 +103,14 @@ currentUserId = user.id;
 
 });
 
+app.get("/logout", (req, res) => {
+
+    currentUserId = null;
+
+    res.redirect("/");
+
+});
+
 app.post("/add-entry", (req, res) => {
 
     const { entry } = req.body;

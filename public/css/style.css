@@ -480,3 +480,40 @@ flex:1;
 width:100%;
 
 }
+
+.footer{
+
+margin-top:25px;
+padding-top:20px;
+
+border-top:1px solid #eee;
+
+text-align:center;
+
+font-size:14px;
+
+color:#888;
+
+}
+
+body{
+
+animation:pageFade .5s ease;
+
+}
+
+@keyframes pageFade{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
