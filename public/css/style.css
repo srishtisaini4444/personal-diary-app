@@ -129,10 +129,31 @@ color:#4834D4;
 
 textarea{
 
-resize:none;
-min-height:220px;
-line-height:1.8;
+width:100%;
+min-height:250px;
+padding:20px;
+margin:15px 0;
+
+border:2px solid #e6e6e6;
+border-radius:18px;
+
+background:#f9f9f9;
+
 font-size:16px;
+line-height:1.8;
+
+resize:vertical;
+
+transition:all .3s ease;
+
+}
+
+textarea:focus{
+
+outline:none;
+border-color:#FF6B6B;
+background:white;
+box-shadow:0 0 18px rgba(255,107,107,.25);
 
 }
 
@@ -388,5 +409,54 @@ transition:transform .3s ease;
 .container:hover{
 
 transform:translateY(-5px);
+
+}
+
+.top-buttons{
+
+display:flex;
+justify-content:space-between;
+gap:15px;
+margin:25px 0;
+
+}
+
+.nav-btn,
+.logout-btn{
+
+flex:1;
+text-align:center;
+padding:14px;
+border-radius:12px;
+text-decoration:none;
+font-weight:600;
+color:white;
+transition:.3s;
+
+}
+
+.nav-btn{
+
+background:#6C63FF;
+
+}
+
+.logout-btn{
+
+background:#EF4444;
+
+}
+
+.nav-btn:hover{
+
+background:#574bff;
+transform:translateY(-3px);
+
+}
+
+.logout-btn:hover{
+
+background:#DC2626;
+transform:translateY(-3px);
 
 }
