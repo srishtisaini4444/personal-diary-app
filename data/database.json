@@ -1,0 +1,11 @@
+{
+  "nextUserId": 2,
+  "users": [
+    {
+      "id": 1,
+      "username": "siri",
+      "password": "1234"
+    }
+  ],
+  "entries": []
+}

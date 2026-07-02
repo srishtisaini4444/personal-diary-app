@@ -9,11 +9,12 @@
 
     <h1>Register</h1>
 
-    <form id="registerForm">
+    <form action="/register" method="POST">
 
         <input
             type="text"
             id="username"
+            name="username"
             placeholder="Enter Username"
             required
         >
@@ -23,6 +24,7 @@
         <input
             type="password"
             id="password"
+            name="password"
             placeholder="Enter Password"
             required
         >
