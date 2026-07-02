@@ -7,5 +7,21 @@
       "password": "1234"
     }
   ],
-  "entries": []
+  "entries": [
+    {
+      "id": 1,
+      "userId": 1,
+      "content": "Today I completed my backend project."
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "content": "Today I completed backend mhu"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "content": "hii\r\n"
+    }
+  ]
 }
