@@ -1,5 +1,6 @@
 {
   "nextUserId": 3,
+  "nextEntryId" :9,
   "users": [
     {
       "id": 1,
@@ -14,39 +15,27 @@
   ],
   "entries": [
     {
-      "id": 1,
-      "userId": 1,
-      "content": "Today I completed my backend project."
+      "nextUserId": 3,
+      "users": [
+        {
+          "id": 1,
+          "username": "siri",
+          "password": "1234"
+        },
+        {
+          "id": 2,
+          "username": "mhu",
+          "password": "12345"
+        }
+      ],
+      "entries": []
     },
     {
       "id": 2,
       "userId": 1,
-      "content": "Today I completed backend mhu"
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "content": "hii\r\n"
-    },
-    {
-      "id": 4,
-      "userId": 1,
-      "content": "tata"
-    },
-    {
-      "id": 6,
-      "userId": 1,
-      "content": "hie"
-    },
-    {
-      "id": 7,
-      "userId": 2,
-      "content": "cat"
-    },
-    {
-      "id": 7,
-      "userId": 1,
-      "content": "hehe"
+      "content": "tralala",
+      "date": "2/7/2026",
+      "time": "11:06:02 pm"
     }
   ]
 }

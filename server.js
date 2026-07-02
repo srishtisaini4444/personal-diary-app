@@ -95,10 +95,6 @@ app.post("/add-entry", (req, res) => {
 
     const db = readDatabase();
 
-    if (db.users.length === 0) {
-        return res.send("No user found.");
-    }
-
     // ------->>>>Temporary: use the last registered user mehuu meow🥺
      const currentUser = db.users.find(
     user => user.id === currentUserId
@@ -112,7 +108,7 @@ app.post("/add-entry", (req, res) => {
 
 const newEntry = {
 
-    id: db.entries.length + 1,
+    id: db.nextEntryId,
 
     userId: currentUser.id,
 
@@ -125,6 +121,8 @@ const newEntry = {
     };
 
     db.entries.push(newEntry);
+
+    db.nextEntryId++;
 
     writeDatabase(db);
 
@@ -178,43 +176,10 @@ app.get("/api/entries", (req, res) => {
 
 app.get("/entries", (req, res) => {
 
-    const db = readDatabase();
-
     if (currentUserId === null) {
     return res.redirect("/");
     }
 
-    const userEntries = db.entries.filter(
-    entry => entry.userId === currentUserId
-    );
-
-    let html = "<h1>My Diary Entries</h1>";
-
-    userEntries.forEach(entry => {
-
-        html += `
-        <div style="border:1px solid black;padding:10px;margin:10px;">
-            <p>${entry.content}</p>
-
-            <form action="/delete-entry/${entry.id}" method="POST">
-                <button>Delete</button>
-            </form>
-
-            <br>
-
-            <form action="/edit-entry/${entry.id}" method="GET">
-                <button>Edit</button>
-            </form>
-        </div>
-        `;
-
-    });
-
-    html += `
-<br><br>
-
-<a href="/">Logout</a>
-`;
 
 res.sendFile(path.join(__dirname,"public","entries.html"));
 
