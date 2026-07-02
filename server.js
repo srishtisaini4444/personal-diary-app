@@ -102,10 +102,20 @@ app.post("/add-entry", (req, res) => {
     return res.send("Please login first.");
 }
 
-    const newEntry = {
-        id: db.entries.length + 1,
-        userId: currentUser.id,
-        content: entry
+    const now = new Date();
+
+const newEntry = {
+
+    id: db.entries.length + 1,
+
+    userId: currentUser.id,
+
+    content: entry,
+
+    date: now.toLocaleDateString(),
+
+    time: now.toLocaleTimeString()
+
     };
 
     db.entries.push(newEntry);
