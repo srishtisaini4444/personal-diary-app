@@ -10,49 +10,45 @@
     
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <h1>📖 MyDiary</h1>
+        <h1>📖 Personal Diary</h1>
 
-<p style="text-align:center;color:gray;margin-bottom:25px;">
-Capture your thoughts forever.
-</p>
+        <p class="subtitle">
+            Capture your memories. Keep them safe.
+        </p>
 
-    <form action="/login" method="POST">
+        <form action="/login" method="POST">
 
-        <input
-            type="text"
-            name="username"
-            placeholder="Enter Username"
-            required
-        >
+            <input
+                type="text"
+                name="username"
+                placeholder="👤 Username"
+                required
+            >
 
-        <br><br>
+            <input
+                type="password"
+                name="password"
+                placeholder="🔒 Password"
+                required
+            >
 
-        <input
-            type="password"
-            name="password"
-            placeholder="Enter Password"
-            required
-        >
+            <button type="submit">
+                Login
+            </button>
 
-        <br><br>
+        </form>
 
-        <button type="submit">
-            Login
-        </button>
+        <p class="bottom-text">
+            New here?
+            <a href="/register">Create Account</a>
+        </p>
 
-    </form>
-
-    <br>
-
-    <a href="/register">
-        Don't have an account? Register
-    </a>
-
-</div>
+    </div>
 
 </body>
 

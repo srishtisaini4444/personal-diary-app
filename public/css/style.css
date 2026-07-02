@@ -15,7 +15,8 @@ body{
 }
 
 .container{
-    width:450px;
+     width:100%;
+    max-width:450px;
     background:#fff;
     border-radius:20px;
     padding:40px;
@@ -55,7 +56,8 @@ margin:12px 0;
 border:2px solid #ddd;
 border-radius:12px;
 font-size:16px;
-transition:.3s;
+background:#fafafa;
+transition:all .3s ease;
 
 }
 
@@ -79,14 +81,15 @@ border-radius:12px;
 font-size:18px;
 font-weight:bold;
 cursor:pointer;
-transition:.3s;
+transition:all .3s ease;
 
 }
 
 button:hover{
 
-transform:translateY(-3px);
 background:#574bff;
+transform:translateY(-4px);
+box-shadow:0 12px 30px rgba(108,99,255,.35);
 
 }
 
@@ -128,19 +131,57 @@ color:#999;
 
 .entry-card{
 
-background:white;
+background:#ffffff;
 
-color:#333;
-
-padding:20px;
+padding:22px;
 
 margin-top:20px;
 
-border-radius:15px;
+border-radius:18px;
 
-box-shadow:0 10px 20px rgba(0,0,0,.15);
+border-left:6px solid #6C63FF;
+
+box-shadow:0 15px 35px rgba(0,0,0,.12);
 
 animation:fade .4s ease;
+
+transition:all .3s ease;
+
+}
+
+.entry-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.18);
+
+}
+
+.entry-card h3{
+
+color:#4834D4;
+
+margin-bottom:8px;
+
+}
+
+.entry-card small{
+
+display:block;
+
+margin-bottom:18px;
+
+color:#777;
+
+}
+
+.bottom-text{
+
+text-align:center;
+
+margin-top:20px;
+
+color:#666;
 
 }
 
@@ -177,5 +218,27 @@ background:#2563EB;
 .delete-btn:hover{
 
 background:#DC2626;
+
+}
+
+@media(max-width:500px){
+
+.container{
+
+padding:25px;
+
+}
+
+h1{
+
+font-size:26px;
+
+}
+
+button{
+
+font-size:16px;
+
+}
 
 }
