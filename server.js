@@ -6,7 +6,7 @@ const DB_PATH = path.join(__dirname, "data", "database.json");
 
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 let currentUserId = null;
 
 function readDatabase() {
