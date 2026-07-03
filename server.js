@@ -297,11 +297,6 @@ if (entry.userId !== currentUserId) {
 
 
 
-try {
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
-    });
-} catch (err) {
-    console.error("SERVER ERROR:");
-    console.error(err);
-}
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
