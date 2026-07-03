@@ -3,6 +3,8 @@ const path = require("path");
 const fs = require("fs");
 
 const DB_PATH = path.join(__dirname, "data", "database.json");
+console.log("Database path:", DB_PATH);
+console.log("Database exists:", fs.existsSync(DB_PATH));
 
 
 const app = express();
@@ -295,6 +297,11 @@ if (entry.userId !== currentUserId) {
 
 
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+try {
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
+} catch (err) {
+    console.error("SERVER ERROR:");
+    console.error(err);
+}
